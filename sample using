@@ -1,0 +1,18 @@
+
+spring-cloud-eureka基本操作：
+
+1.搭建服务注册中心
+  注解加配置方式
+2.向注册中心注册服务
+  注解加配置的方式
+  在启动类中添加@EnableEurekaClient，官网说明如下图所示。
+  @EnableEurekaClient这个注解只用于Eureka做为服务发现组件，而@EnableDiscoveryClient则可用于所有的服务发现组件（包括ZK、Consul等）
+
+3.实现高可用的注册中心
+  微服务架构的分布式环境中，需要对各个组件进行高可用部署，
+  对于为服务如此，对于服务注册中心也一样。
+  配置好后命令行启动
+  java -jar eureka-server-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer1
+  java -jar eureka-server-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer2
+  
+  
